@@ -68,7 +68,7 @@ resource "aws_subnet" "public" {
     }
    )
  }
- #Database subnet group
+ #Database subnet group  
  resource "aws_db_subnet_group" "default" {
   name       = "${local.name}"
   subnet_ids = aws_subnet.database[*].id
@@ -146,7 +146,7 @@ resource "aws_subnet" "public" {
  resource "aws_route" "private_route" {
    route_table_id = aws_route_table.private.id
    destination_cidr_block = "0.0.0.0/0"
-  nat_gateway_id =  aws_nat_gateway.ngw.id
+   nat_gateway_id =  aws_nat_gateway.ngw.id
  }
 
  #database route

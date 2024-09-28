@@ -50,3 +50,16 @@ This module creates following resources. We are using HA, we are getting first 2
 * public_subnet_ids - 2 public subnet ID created
 * private_subnet_ids - 2 private subnet ID created
 * database_subnet_ids - 2 database subnet ID created
+
+
+Main functions:
+---------------
+* slice(list, start_index, end_index)
+* list: The list from which elements will be selected.
+* start_index: The index at which the slice begins (inclusive).
+* end_index: The index at which the slice ends (exclusive).
+
+example: azs_names = slice(data.aws_availability_zones.azs.names, 0,2)
+Now it will display only two (0,1) amazon zones from availability zones.
+"us-east-1a",
+"us-east-1b"
