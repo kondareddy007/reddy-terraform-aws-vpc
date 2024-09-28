@@ -68,6 +68,15 @@ resource "aws_subnet" "public" {
     }
    )
  }
+ #Database subnet group
+ resource "aws_db_subnet_group" "default" {
+  name       = "${local.name}"
+  subnet_ids = aws_subnet.database[*].id
+
+  tags = {
+    Name = "${local.name}"
+  }
+ }
 
  # Elastic IP
  resource "aws_eip" "eip" {
